@@ -11,7 +11,7 @@ MAINFILES = $(COREFILES) $(ITEMS) $(CLASS/RACE) $(MONSTERS)
 COREFILES = Actor.o Animal.o Attributes.o Character.o Class.o Encounter.o GPFunctions.o Monster.o Race.o RacialAbility.o SmallAnimal.o
 ITEMS = Item.o EquipableItem.o UnequipableItem.o
 CLASS/RACE = Fighter.o Human.o 
-ENEMIES = Bat.o 
+MONSTERS = Bat.o 
 
 output.out: $(MAINFILES) 
 	g++ -o output.out $(MAINFILES)
@@ -25,7 +25,7 @@ Animal.o: Actors/Animal.cpp
 Attributes: Actors/Characters/Attributes.cpp
 	g++ -c Actors/Characters/Attributes.cpp
 	
-Bat.o: Actors/Enemies/Bat.cpp
+Bat.o: Actors/Monsters/Bat.cpp
 	g++ -c -I $(ADVENTURE) -I $(ACTORS) Actors/Monsters/Bat.cpp
 
 Character.o: Actors/Characters/Character.cpp
