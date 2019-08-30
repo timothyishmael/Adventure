@@ -8,7 +8,7 @@ NakedAttackOption::~NakedAttackOption(void)
 
 void NakedAttackOption::equipmentOptions(void) const
 {
-	std::cout << "(G)rapple" << std::endl;
+	std::cout << "(S)trike" << std::endl << "(G)rapple" << std::endl;
 }
 
 void NakedAttackOption::getChoice(void) const
