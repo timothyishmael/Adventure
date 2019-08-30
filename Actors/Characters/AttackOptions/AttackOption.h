@@ -9,7 +9,6 @@ class Attack_Option
 		virtual ~Attack_Option(void);
 		
 	protected:
-		void firstOptions(void);
 		void * equipmentOptions(void) = 0;
 		void * finalOptions(void);
 		void * getChoice(void) = 0;
