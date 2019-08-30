@@ -7,12 +7,7 @@ AttackOption::AttackOption(void)
 AttackOption::~AttackOption(void)
 {}
 
-void AttackOption::firstOptions(void)
-{
-	std::cout << "(A)ttack" << std::endl;
-}
-
 void AttackOption::finalOptions(void)
 {
-	std::cout << "(D)efend" << std::endl << "(I)tems" << std::endl << "(R)un" << std::endl;
+	std::cout << "(C)hange stance" << std::endl << "(I)tems" << std::endl << "(R)un" << std::endl;
 }
