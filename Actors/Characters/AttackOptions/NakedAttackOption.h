@@ -1,12 +1,12 @@
 #ifndef NAKED_ATTACK_OPTION
 #define NAKED_ATTACK_OPTION
-#include"AttackOptions.h"
+#include"AttackOption.h"
 
-class Naked_Attack_Option : public Attack_Option
+class NakedAttackOption : public AttackOption
 {
 	public:
-		Naked_Attack_Option(void);
-		~Naked_Attack_Option(void);
+		NakedAttackOption(void);
+		~NakedAttackOption(void);
 		
 		void equipmentOptions(void) const;
 		void getChoice(void) const;

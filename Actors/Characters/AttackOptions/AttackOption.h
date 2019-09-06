@@ -1,17 +1,30 @@
 #ifndef ATTACK_OPTION_H
 #define ATTACK_OPTION_H
 #include<string>
+#include<map>
+#include"TurnCommand.h"
+#include"ChangeStanceCommand.h"
+#include"RunCommand.h"
+#include"ItemCommand.h"
 
-class Attack_Option
+class AttackOption
 {
 	public:
-		Attack_Option(void);
-		virtual ~Attack_Option(void);
+		AttackOption(void);
+		virtual ~AttackOption(void);
 		
 	protected:
-		void * equipmentOptions(void) = 0;
-		void * finalOptions(void);
-		void * getChoice(void) = 0;
+		virtual void equipmentOptions(void) = 0;
+		void finalOptions(void);
+		virtual void getChoice(void) = 0;
+
+		std::map<char, TurnCommand> actionMap;
+
+		TurnCommand action;
+
+		void createRunCommand(void);
+		void createItemCommand(void);
+		void createChangeStanceCommand(void);
 };
 
 #endif
