@@ -1,4 +1,4 @@
-#ifndef CHARATCER_H
+#ifndef CHARACTER_H
 #define CHARACTER_H
 #include"Actor.h"
 #include"Class.h"

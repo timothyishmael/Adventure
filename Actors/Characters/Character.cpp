@@ -32,3 +32,10 @@ Character::Character(int lvl):
 
 Character::~Character(void)
 {}
+
+void Character::takeTurn(void)
+{
+	MyAttacks.equipmentOptions();
+	MyAttacks.finalOptions();
+	MyAttacks.getChoice();
+}
