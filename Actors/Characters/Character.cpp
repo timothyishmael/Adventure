@@ -30,12 +30,32 @@ Character::Character(int lvl):
 	this->myAttributes.increaseLuck(10+luckModifier());
 }
 
+Character::Character(int str, int sta, int agi, int acc, int intel, int wis, int cha, int luc, int siz):
+	Actor()
+{
+	this->lvl = 1;
+	this->cr = 1/6;
+	this->size = siz;
+	this->myAttributes.increaseStrength(str);
+	this->myAttributes.increaseStamina(sta);
+	this->myAttributes.increaseAgility(agi);
+	this->myAttributes.increaseAccuracy(acc);
+	this->myAttributes.increaseIntelligence(intel);
+	this->myAttributes.increaseWisdom(wis);
+	this->myAttributes.increaseCharisma(cha);
+	this->myAttributes.increaseLuck(luc);
+}
+
 Character::~Character(void)
 {}
 
 void Character::takeTurn(void)
 {
-	MyAttacks.equipmentOptions();
-	MyAttacks.finalOptions();
-	MyAttacks.getChoice();
+//	MyAttacks.equipmentOptions();
+//	MyAttacks.finalOptions();
+//	MyAttacks.getChoice();
+}
+
+std::string Character::getMyName(void) const{
+	return myName;
 }
