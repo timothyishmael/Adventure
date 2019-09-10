@@ -22,8 +22,8 @@ Actor.o: Actors/Actor.cpp
 Animal.o: Actors/Animal.cpp
 	g++ -c -I $(ADVENTURE) Actors/Animal.cpp
 
-Attributes: Actors/Characters/Attributes.cpp
-	g++ -c Actors/Characters/Attributes.cpp
+Attributes: Actors/Attributes.cpp
+	g++ -c Actors/Attributes.cpp
 	
 Bat.o: Actors/Monsters/Bat.cpp
 	g++ -c -I $(ADVENTURE) -I $(ACTORS) Actors/Monsters/Bat.cpp

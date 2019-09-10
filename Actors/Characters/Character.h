@@ -16,10 +16,10 @@ class Character : public Actor
 		void takeTurn(void);
 
 	private:
-		Class myClass;
-		Race myRace;
-		Outfit myOutfit;
-		CharData myData;
-		AttackOption MyAttacks;
+		//Class myClass;
+		//Race myRace;
+		//Outfit myOutfit;
+		//CharData myData;
+		//AttackOption MyAttacks;
 };
 #endif
