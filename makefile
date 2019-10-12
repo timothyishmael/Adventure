@@ -8,12 +8,13 @@ RACES = /home/Samuel/Adventure/Actors/Characters/Races
 RACIALABILITIES = /home/Samuel/Adventure/Actors/Characters/Races/RacialAbilities
 EQUIPMENT = /home/Samuel/Adventure/Actors/Characters/Inventory
 
-MAINFILES = $(COREFILES) $(ITEMS) $(CLASS) $(RACE) $(MONSTERS) $(ATTACKOPTION)
+MAINFILES = $(COREFILES) $(ITEMS) $(CLASS) $(RACE) $(MONSTERS) $(ATTACKOPTION) $(TURNCOMMANS)
 ATTACKOPTIONS = AttackOption.o DoubleWeaopnOption.o NakedAttackOption.o OneHandedAttackOption.o PureShieldOption.o SwordAndShieldOption.o TwoHandedAttackOption.o
 COREFILES = Actor.o Animal.o Attributes.o Character.o Encounter.o GPFunctions.o Monster.o Race.o RacialAbility.o SmallAnimal.o
 ITEMS = Item.o EquipableItem.o MeleeWeapon.o RangedWeapon.o UnequipableItem.o Weapon.o
 CLASS = Barbarian.o Burglar.o Class.o Cleric.o Fighter.o Magician.o Ninja.o Paladin.o Ranger.o
 RACE = Human.o 
+TURNCOMMANDS = AttackCommand.o CastCommand.o ChangeStanceCommand.o DefendCommand.o GrappleCommand.o ItemCommand.o RunCommand.o StrikeCommand.o TurnCommand.o TurnCommands.o
 MONSTERS = Bat.o 
 
 output.out: $(MAINFILES) 
@@ -115,6 +116,30 @@ Human.o: Actors/Characters/Races/Human.cpp
 	g++ -c Actors/Characters/Races/Human.cpp
 
 		#TurnCommands
+
+AttackCommand.o: Actors/Characters/TurnCommands/AttackCommand.cpp
+	g++ -c Actors/Characters/TurnCommands/AttackCommand.cpp
+
+CastCommand.o: Actors/Characters/TurnCommands/CastCommand.cpp
+	g++ -c Actors/Characters/TurnCommands/CastCommand.cpp
+
+ChangeStanceCommand.o: Actors/Characters/TurnCommands/ChangeStanceCommand.cpp
+	g++ -c Actors/Characters/TurnCommands/ChangeStanceCommand.cpp
+
+DefendCommand.o: Actors/Characters/TurnCommands/DefendCommand.cpp
+	g++ -c Actors/Characters/TurnCommands/DefendCommand.cpp
+
+GrappleCommand.o: Actors/Characters/TurnCommands/GrappleCommand.cpp
+	g++ -c Actors/Characters/TurnCommands/GrappleCommand.cpp
+
+ItemCommand.o: Actors/Characters/TurnCommands/ItemCommand.cpp
+	g++ -c Actors/Characters/TurnCommands/ItemCommand.cpp
+
+RunCommand.o: Actors/Characters/TurnCommands/RunCommand.cpp
+	g++ -c Actors/Characters/TurnCommands/RunCommand.cpp
+
+StrikeCommand.o: Actors/Characters/TurnCommands/StrikeCommand.cpp
+	g++ -c Actors/Characters/TurnCommands/StrikeCommand.cpp
 
 TurnCommand.o: Actors/Characters/TurnCommands/TurnCommand.cpp
 	g++ -c Actors/Characters/TurnCommands/TurnCommand.cpp
