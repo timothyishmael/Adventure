@@ -7,57 +7,139 @@ RACES = /home/Samuel/Adventure/Actors/Characters/Races
 RACIALABILITIES = /home/Samuel/Adventure/Actors/Characters/Races/RacialAbilities
 EQUIPMENT = /home/Samuel/Adventure/Actors/Characters/Inventory
 
-MAINFILES = $(COREFILES) $(ITEMS) $(CLASS/RACE) $(MONSTERS)
-COREFILES = Actor.o Animal.o Attributes.o Character.o Class.o Encounter.o GPFunctions.o Monster.o Race.o RacialAbility.o SmallAnimal.o
-ITEMS = Item.o EquipableItem.o UnequipableItem.o
-CLASS/RACE = Fighter.o Human.o 
+MAINFILES = $(COREFILES) $(ITEMS) $(CLASS) $(RACE) $(MONSTERS) $(ATTACKOPTION)
+ATTACKOPTIONS = AttackOption.o DoubleWeaopnOption.o NakedAttackOption.o OneHandedAttackOption.o PureShieldOption.o SwordAndShieldOption.o TwoHandedAttackOption.o
+COREFILES = Actor.o Animal.o Attributes.o Character.o Encounter.o GPFunctions.o Monster.o Race.o RacialAbility.o SmallAnimal.o
+ITEMS = Item.o EquipableItem.o MeleeWeapon.o RangedWeapon.o UnequipableItem.o Weapon.o
+CLASS = Barbarian.o Burglar.o Class.o Cleric.o Fighter.o Magician.o Ninja.o Paladin.o Ranger.o
+RACE = Human.o 
 MONSTERS = Bat.o 
 
 output.out: $(MAINFILES) 
 	g++ -o output.out $(MAINFILES)
 
+#main file
+
+#Actor
+
 Actor.o: Actors/Actor.cpp
 	g++ -c Actors/Actor.cpp
 
-Animal.o: Actors/Animal.cpp
-	g++ -c -I $(ADVENTURE) Actors/Animal.cpp
+Attributes.o: Actors/Characters/Attributes.cpp
+	g++ -c Actors/Characters/Attributes.cpp
 
-Attributes: Actors/Attributes.cpp
-	g++ -c Actors/Attributes.cpp
+	#Characters
+
+		#AttackOption
+
+AttackOption.o: Actors/Characters/AttackOptions/AttackOption.cpp
+	g++ -c Actors/Characters/AttackOptions/AttackOption.cpp
+
+DoubleWeaponOption.o: Actors/Characters/AttackOptions/DoubleWeaponOption.cpp
+	g++ -c Actors/Characters/AttackOptions/DoubleWeaponOption.cpp
+ 
+NakedAttackOption.o: Actors/Characters/AttackOptions/NakedAttackOption.cpp
+	g++ -c Actors/Characters/AttackOptions/NakedAttackOption.cpp
+
+OneHandedAttackOption.o: Actors/Characters/AttackOptions/OneHandedAttackOption.cpp
+	g++ -c Actors/Characters/AttackOptions/OneHandedAttackOption.cpp
+
+PureShieldOption.o: Actors/Characters/AttackOptions/PureShieldOption.cpp
+	g++ -c Actors/Characters/AttackOptions/PureShieldOption.cpp
+
+SwordAndShieldOption.o: Actors/Characters/AttackOptions/SwordAndShieldOption.cpp
+	g++ -c Actors/Characters/AttackOptions/SwordAndShieldOption.cpp
+
+TwoHandedAttackOption.o: Actors/Characters/AttackOptions/TwoHandedAttackOption.cpp
+	g++ -c Actors/Characters/AttackOptions/TwoHandedAttackOption.cpp
+
+		#Classes
+
+Barbarian.o: Actors/Characters/Classes/Barbarian.cpp
+	g++ -c Actors/Characters/Classes/Barbarian.cpp
+
+Burglar.o: Actors/Characters/Classes/Burglar.cpp
+	g++ -c Actors/Characters/Classes/Burglar.cpp
+
+Class.o: Actors/Characters/Classes/Class.cpp
+	g++ -c I $(ADVENTURE) Actors/Characters/Classes/Class.cpp
 	
-Bat.o: Actors/Monsters/Bat.cpp
-	g++ -c -I $(ADVENTURE) -I $(ACTORS) Actors/Monsters/Bat.cpp
+Cleric.o: Actors/Characters/Classes/Cleric.cpp
+	g++ -c Actors/Characters/Classes/Cleric.cpp
+
+Fighter.o: Actors/Characters/Classes/Fighter.cpp
+	g++ -c Actors/Characters/Classes/Fighter.cpp
+
+Magician.o: Actors/Characters/Classes/Magician.cpp
+	g++ -c Actors/Characters/Classes/Magician.cpp
+
+Ninja.o: Actors/Characters/Classes/Ninja.cpp
+	g++ -c Actors/Characters/Classes/Ninja.cpp
+
+Paladin.o: Actors/Characters/Classes/Paladin.cpp
+	g++ -c Actors/Characters/Classes/Paladin.cpp
+
+Ranger.o: Actors/Characters/Classes/Ranger.cpp
+	g++ -c Actors/Characters/Classes/Ranger.cpp
+
+		#Inventory
+
+EquipableItem.o: Actors/Characters/Inventory/EquipableItem.cpp
+	g++ -c I $(EQUIPMENT) Actors/Characters/Inventory/EquipableItem.cpp
+
+Item.o: Actors/Characters/Inventory/Item.cpp
+	g++ -c Actors/Characters/Inventory/Item.cpp
+
+MeleeWeapon.o: Actors/Characters/Inventory/MeleeWeapon.cpp
+	g++ -c Actors/Characters/Inventory/MeleeWeapon.cpp
+
+RangedWeapon.o: Actors/Characters/Inventory/RangedWeapon.cpp
+	g++ -c Actors/Characters/Inventory/RangedWeapon.cpp
+
+UnequipableItem.o: Actors/Characters/Inventory/UnquipableItem.cpp
+	g++ -c I $(EQUIPMENT) Actors/Characters/Inventory/UnequipableItem.cpp
+	
+Weapon.o: Actors/Characters/Inventory/Weapon.cpp
+	g++ -c Actors/Characters/Inventory/Weapon.cpp
+
+		#Race
+
+Race.o: Actors/Characters/Races/Race.cpp
+	g++ -c I $(RACES) $(RACIALABILITIES) Actors/Characters/Races/Race.cpp
+
+Human.o: Actors/Characters/Races/Human.cpp
+	g++ -c Actors/Characters/Races/Human.cpp
+
+		#Miscillanious
 
 Character.o: Actors/Characters/Character.cpp
 	g++ -c I $(ADVENTURE) $(CLASSES) $(RACES) $(CHARACTERS) Actors/Characters/Character.cpp
 	
-Class.o: Actors/Characters/Classes/Class.cpp
-	g++ -c I $(ADVENTURE) Actors/Characters/Classes/Class.cpp
-	
+Outfit.o: Actors/Characters/Outfit.cpp
+	g++ -c Actors/Characters/Outfit.cpp
+
+TurnCommand.o: Actors/Characters/TurnCommand.cpp
+	g++ -c Actors/Characters/TurnCommand.cpp
+
+
+
+Animal.o: Actors/Animal.cpp
+	g++ -c -I $(ADVENTURE) Actors/Animal.cpp
+
+Bat.o: Actors/Monsters/Bat.cpp
+	g++ -c -I $(ADVENTURE) -I $(ACTORS) Actors/Monsters/Bat.cpp
+
+
+
 Encounter.o: Encounter.cpp
 	g++ -c -I $(ADVENTURE) -I $(ACTORS) -I $(MONSTERS) Encounter.cpp
-	
-EquipableItem.o: Actors/Characters/Inventory/EquipableItem.cpp
-	g++ -c I $(EQUIPMENT) Actors/Characters/Inventory/EquipableItem.cpp
-
-Fighter.o: Actors/Characters/Classes/Fighter.cpp
-	g++ -c I $(CLASSES) Actors/Characters/Classes/Fighter.cpp
 	
 GPFunctions.o: GPFunctions.cpp
 	g++ -c GPFunctions.cpp
 	
-Item.o: Actors/Characters/Inventory/Item.cpp
-	g++ -c Actors/Characters/Inventory/Item.cpp
-
 Monster.o: Actors/Monster.cpp
 	g++ -c Actors/Monster.cpp
 	
-UnequipableItem.o: Actors/Characters/Inventory/UnquipableItem.cpp
-	g++ -c I $(EQUIPMENT) Actors/Characters/Inventory/UnequipableItem.cpp
-	
-Race.o: Actors/Characters/Races/Race.cpp
-	g++ -c I $(RACES) $(RACIALABILITIES) Actors/Characters/Races/Race.cpp
-
 RacialAbility.o: Actors/Characters/Races/RacialAbilities/RacialAbility.cpp
 	g++ -c Actors/Characters/Races/RacialAbilities/RacialAbility.cpp
 	
