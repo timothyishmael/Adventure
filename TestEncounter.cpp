@@ -1,13 +1,12 @@
 
 #include<iostream>
-#include"Bat.h"
+#include"Character.h"
 
 int main()
 {
-	Bat bat1(1);
+	Character char1(1);
 
-	std::cout << bat1.getName() << std::endl;
-	bat1.takeTurn();
+	std::cout << char1.myAttributes.getStrength() << std::endl;
 
 	return 0;
 }

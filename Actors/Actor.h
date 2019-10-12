@@ -6,5 +6,7 @@ class Actor
 	public:
 		Actor(void);
 		~Actor(void);
+
+		Attributes myAttributes;
 };
 #endif
